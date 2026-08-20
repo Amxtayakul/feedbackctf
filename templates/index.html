@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    TODO
+    ---------------
+    Secure python_flask eval execution by
+        1. blocking malicious keyword like os,eval,exec,bind,connect,python,socket,ls,cat,shell,bind
+        2. Implementing regex: r'0x[0-9A-Fa-f]+|\\u[0-9A-Fa-f]{4}|%[0-9A-Fa-f]{2}|\.[A-Za-z0-9]{1,3}\b|[\\\/]|\.'
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Seen Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4 text-center">Give Us Feedback</h1>
+        <p class="text-center text-muted">Tell us how we're doing - we'll score your sentiment automatically!</p>
+        <form method="post" action="/execute">
+            <div class="form-group">
+                <label for="feedback">Enter your feedback:</label>
+                <textarea id="feedback" name="feedback" class="form-control" rows="10" cols="50"
+                    placeholder="example: 'great service'"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box mt-4">
+            <pre>{{ result }}</pre>
+        </div>
+        {% endif %}
+
+        <div class="footer-link mt-4">
+            <a href="/">Go back</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 40px;
+}
+
+.container {
+    max-width: 700px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+textarea {
+    font-family: monospace;
+}
+
+.result-box {
+    background: #212529;
+    color: #d4f7d4;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: monospace;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.footer-link {
+    text-align: center;
+}
